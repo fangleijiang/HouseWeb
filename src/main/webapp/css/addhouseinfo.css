@@ -1,0 +1,19 @@
+/* .center_center_right{
+	float: left;
+	width: 950px;
+	height: 100%;
+	margin-left: 37px;
+	 background-color: yellow; 
+	font-size: 14px;
+	color: #b24422;
+} */
+.btn{
+	width: 60px;
+	height: 28px;
+	background: #C00;
+	border: 1px solid transparent;
+	color: #FFF;
+	font-size: 14px;
+	margin-top: 20px;
+
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc   
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       ">
+
+	<context:annotation-config />
+	<!-- 把标记了@Controller注解的类转换为bean -->
+	<context:component-scan base-package="com.flj.house.action" />
+	<!-- 配置拦截器 -->
+	 <mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 指定要拦截的特定的请求，这里是ListUser.do -->
+			<mvc:mapping path="/user/*" />
+			<!-- <mvc:mapping path="/listUsersAllHouseInfo.action" />
+			<mvc:mapping path="/userFriends.action" />
+			<mvc:mapping path="/addHouseToCart.action" />
+			<mvc:mapping path="/addHouseInfo.action" />
+			<mvc:mapping path="/listCart.action" /> -->
+			<!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->
+			<bean class="com.flj.house.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+		<mvc:mapping path="/admin/*"/>
+		<bean class="com.flj.house.interceptor.AdminInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors> 
+
+
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:suffix=".jsp" />
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="utf-8" />
+		
+		
+</beans>  

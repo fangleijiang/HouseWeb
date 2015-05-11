@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      	      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+              http://www.springframework.org/schema/aop
+              http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+              http://www.springframework.org/schema/tx
+              http://www.springframework.org/schema/tx/spring-tx-4.0.xsd  
+			  http://www.springframework.org/schema/util
+			  http://www.springframework.org/schema/util/spring-util-2.0.xsd
+			  "
+	default-lazy-init="false">
+	<context:annotation-config />
+	<context:component-scan base-package="com.flj.house" />
+<!-- 引入jdbc配置文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${mysql.driver}</value>
+		</property>
+
+		<property name="url">
+			<value>${mysql.url}</value>
+		</property>
+
+		<property name="username">
+			<value>${mysql.username}</value>
+		</property>
+
+		<property name="password">
+			<value>${mysql.password}</value>
+		</property>
+
+		<property name="initialSize">
+			<value>${mysql.initialSize}</value>
+		</property>
+
+		<property name="maxActive">
+			<value>${mysql.maxActive}</value>
+		</property>
+
+		<property name="minIdle">
+			<value>${mysql.maxActive}</value>
+		</property>
+
+		<property name="maxIdle">
+			<value>${mysql.maxActive}</value>
+		</property>
+
+		<property name="maxWait">
+			<value>${mysql.maxWait}</value>
+		</property>
+
+		<property name="testOnBorrow">
+			<value>${mysql.testOnBorrow}</value>
+		</property>
+
+		<property name="testWhileIdle">
+			<value>${mysql.testWhileIdle}</value>
+		</property>
+		
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		 <property name="packagesToScan">
+			<list>
+				<value>com.flj.house.model</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 定义事务管理器（声明式的事务） -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- 使用注解模式 配置事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+	
+	
+</beans>

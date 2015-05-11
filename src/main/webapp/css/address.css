@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+.oval_btn {
+    width: 200px;
+    height: 40px;
+    background: #C00;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+    /*margin-left: 340px;*/
+    font-size: 16px;
+    color: white;
+}
+.zb_tj{
+	margin-top: 20px;
+}
+./*中间-中间*/
+.center_center {
+	float: left;
+	width: 900px;
+	height: 100%;
+	margin-left: 37px;
+	/* background-color: yellow; */
+	font-size: 14px;
+	color: #b24422;
+}
+
+.province{
+	margin-top: 20px;
+	margin-left: 250px;
+}

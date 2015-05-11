@@ -1,0 +1,728 @@
+@CHARSET "UTF-8";
+body {
+	font-size: 13px;
+	background: #f5f4f2;
+}
+
+body,html{
+	width: 100%;
+	height: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a:link { /*未访问*/ /*注意这四个的顺序LoVe-HA:link,visited,hover,active，否则会出错*/
+	color: #b24422; /*white*/
+	text-decoration: none;
+}
+
+a:visited { /*已访问*/
+	color: #b24422; /*blue*/
+}
+
+a:hover { /*鼠标悬停在链接上*/
+	cursor: pointer;
+	/* background: rgb(153, 34, 34); */
+	text-decoration:underline;
+	color: #b24422;
+}
+
+a:active { /*被选择的链接，正点击时*/
+	color: #b24422; /*white*/
+}
+
+#content {
+	width: 1140px;
+	height: 1400px;
+	margin-top: 20px;
+	margin-left: 8%;
+}
+
+/*中间*/
+#center {
+	widht: 100%;
+	height: 1200px;
+	margin-top: 50px;
+	/* background-color: blue; */
+}
+/*中间-左边*/
+.center_left {
+	width: 150px;
+	height: 100%;
+	float: left;
+	/* background-color: red; */
+}
+/*中间-中间*/
+.center_center {
+	float: left;
+	width: 650px;
+	height: 100%;
+	margin-left: 37px;
+	/* background-color: yellow; */
+	font-size: 14px;
+	color: #b24422;
+}
+
+/*中间-右边*/
+.center_right {
+	float: right;
+	width: 270px;
+	height: 100%;
+	/* background-color: orange; */
+}
+/*底部*/
+#bottom {
+	width: 100%;
+	height: 50px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	/*background-color: green;*/
+	float: left;
+}
+
+.bottom_func {
+	width: 100%;
+	height: 25px;
+	
+}
+
+.bottom_func ul {
+	width: 600px;
+	height: 25px;
+	margin-left: 30%;
+}
+
+.bottom_func ul li {
+	float: left;
+	margin-left: 20px;
+}
+
+.bottom_address {
+	color: #666;
+	margin-left: 30%;
+}
+.menu {
+	width: 100%;
+	border-bottom: 1px solid #CCC;
+}
+
+.menu {
+	list-style: none;
+}
+
+.menu li {
+	height: 36px;
+	width: 100%;
+}
+
+.menu_name {
+	line-height: 36px;
+	float: left;
+	margin-left: 15px;
+}
+.images {
+	width: 40;
+	height: 36px;
+	float: left;
+}
+
+.tip {
+	width: 350px;
+	border: 2px solid #ffa200;
+	position: absolute;
+	padding: 10px;
+	background: #fff;
+	display: none;
+	z-index: 110;
+}
+
+.tip li {
+	width: 90%;
+	margin-left: 5%;
+	height: 90px;
+	border-bottom: 1px dashed #CCCCCC;
+}
+
+.tip_name {
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+.tip_n_icon {
+	width: 250px;
+	height: 100px;
+	float: left;
+}
+
+.tip_n_icon ul {
+	width: 100%;
+	height: 60px;
+	list-style: none;
+}
+
+.tip_n_icon ul li {
+	float: right;
+	width: 120px;
+	height: 25px;
+	margin-left: 0;
+	border: 0;
+	text-align: center;
+}
+
+.tip_li {
+	margin-top: 10px;
+}
+
+.center_left_bottom {
+	width: 100%;
+	height: 480px;
+	
+}
+
+.center_left_list {
+	width: 100%;
+	height: 430px;
+	margin-top: 5px;
+	background: #e8e6e3;
+}
+
+.center_left_list ul {
+	width: 140px;
+}
+
+.center_left_list ul li {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.submit_btn {
+	width: 60px;
+	height: 30px;
+	float: left;
+	background: #C00;
+	border: 1px solid transparent;
+	color: #FFF;
+	font-size: 14px;
+	margin-left: 40px;
+	cursor: pointer;
+}
+
+
+.center_right_top {
+	width: 270px;
+	height: auto;
+}
+
+.cook {
+	width: 100%;
+	height: auto;
+	background: #FFF;
+}
+
+.cook_name {
+	width: 230px;
+	height: 700px;
+	margin-left: 20px;
+}
+
+.cook_name ul {
+	width: 100%;
+	height: 450px;
+	list-style: none;
+}
+
+.cook_name ul li {
+	width: 100%;
+	height: 80px;
+	margin-top: 20px;
+	border-bottom: 1px solid #CCC;
+}
+
+.people {
+	width: 100%;
+	height: 60px;
+}
+
+.people_pic {
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+.people_tro {
+	width: 110px;
+	height: 50px;
+	line-height: 20px;
+	float: left;
+	padding-top: 2px;
+	padding-left: 10px;
+}
+
+.people_attent {
+	width: 35px;
+	height: 25px;
+	line-height: 25px;
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+	float: right;
+	background: #C00;
+}
+
+.people_attent:hover {
+	background: #666;
+	cursor: pointer;
+}
+
+.people_more {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+
+.popular_menu {
+	width: 100%;
+	height: 350px;
+	margin-top: 20px;
+	background: #FFF;
+}
+
+.popular_m_list {
+	width: 100%;
+	height: 300px;
+}
+
+.popular_m_list ul {
+	width: 230px;
+	height: 260px;
+	margin-left: 20px;
+}
+
+.popular_m_list ul li {
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	float: left;
+}
+
+.popular_m_list ul li img {
+	width: 100%;
+	height: 100%;
+}
+/*底部*/
+#bottom {
+	width: 100%;
+	height: 50px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.bottom_func {
+	width: 100%;
+	height: 25px;
+	
+}
+
+.bottom_func ul {
+	width: 600px;
+	height: 25px;
+	margin-left: 30%;
+}
+
+.bottom_func ul li {
+	float: left;
+	margin-left: 20px;
+}
+
+.bottom_address {
+	color: #666;
+	margin-left: 30%;
+}
+
+/*slider*/
+.num {
+	position: relative;
+	bottom: 40px;
+	left: 510px;
+	z-index: 100;
+}
+
+.num ul li {
+	list-style: none;
+	/*float:right;*/
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	font-size: 13px;
+	border: 1px solid #F33;
+	color: #F33;
+	background-color: #FFF;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.num ul li.on {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	color: #FFF;
+	background-color: #F33;
+}
+
+/*橙香玛德琳页面*/
+.center_head {
+	width: 100%;
+	height: 50px;
+}
+
+.dujia {
+	width: 60px;
+	height: 15px;
+	font-size: 7px;
+	background: #b24422;
+	float: left;
+	color: #FFF;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 10px;
+	"
+}
+
+.center_content {
+	width: 100%;
+}
+
+.c_c_left {
+	width: 700px;
+	float: left;
+	background: #FFF;
+}
+
+.c_c_l_pic {
+	width: 700px;
+	height: 466px;
+}
+
+.troduce {
+	width: 100%;
+	height: 300px;
+	background: #FFF;
+	border-bottom: 3px solid #CCC;
+}
+
+.troduce h1 {
+	font-weight: bold;
+	color: #999;
+	padding-top: 30px;
+	padding-left: 20px;
+}
+
+.troduce p {
+	padding-left: 20px;
+	line-height: 25px;
+	padding-right: 20px;
+}
+
+.tro_person {
+	width: 680px;
+	height: 40px;
+	text-align: right;
+}
+
+.tro_person span {
+	margin-top: 10px;
+}
+
+.step {
+	width: 660px;
+	margin-left: 20px;
+	background: #FFF;
+}
+
+.material {
+	width: 100%;
+	height: 220px;
+}
+
+
+
+.step_list {
+	width: 660px;
+}
+
+.step_l_text {
+	width: 430px;
+	height: 150px;
+	float: left;
+}
+
+.step_l_text p {
+	line-height: 25px;
+}
+
+.step_l_pic {
+	width: 200px;
+	height: 150px;
+	float: right;
+}
+
+.step_list ul li {
+	height: 170px;
+}
+
+/*右边*/
+.c_c_right {
+	width: 380px;
+	float: right;
+	height: 2800px;
+}
+
+.c_c_r_sort {
+	width: 340px;
+	height: 80px;
+	background: #FFF;
+	padding: 20px;
+}
+
+.c_c_r_add {
+	width: 340px;
+	height: 320px;
+	background: #FFF;
+	margin-top: 20px;
+	padding: 20px;
+}
+
+.c_c_r_add ul li {
+	height: 25px;
+}
+
+.all_menu {
+	width: 340px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.c_c_r_search {
+	width: 340px;
+	height: 250px;
+	background: #fff;
+	margin-top: 20px;
+	padding: 20px;
+}
+
+.c_c_r_search ul li {
+	float: left;
+	width: 160px;
+	height: 25px;
+}
+
+.message {
+	width: 100%;
+	height: 30px;
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.c_c_r_time {
+	width: 100%;
+	margin-top: 30px;
+	color: #666;
+}
+
+/*留言*/
+.message_input {
+	width: 620px;
+}
+
+.message_input textarea {
+	width: 100%;
+	height: 150px;
+	color: #999;
+}
+
+.publish {
+	width: 90px;
+	height: 30px;
+	background: #C00;
+	margin-top: 10px;
+	border: 1px solid transparent;
+	color: #FFF;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.comment {
+	width: 620px;
+	margin-top: 50px;
+	position: relative;
+	bottom: 50px;
+}
+
+.comment ul li {
+	float: left;
+	margin-top: 20px;
+}
+
+.person_pic {
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+.person_message {
+	width: 540px;
+	min-height: 60px;
+	float: right;
+	padding-left: 10px;
+}
+
+.person_words {
+	margin-top: 20px;
+}
+
+.madeling_name {
+	width: 330px;
+	height: 35px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 15px;
+}
+
+.details {
+	height: 35px;
+	width: 100%;
+	text-align: center;
+	line-height: 35px;
+	color: #666;
+}
+
+.person {
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+}
+
+/*遮罩层*/
+#mask {
+	width: 100%;
+	height: 100%;
+	background: #000; /*black*/
+	background: rgba(0, 0, 0, 0.3);
+	filter: alpha(opacity = 30);
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	z-index: 100;
+	display: none;
+}
+
+#signup {
+	width: 400px;
+	height: 400px;
+	background: #FFF;
+	z-index: 101;
+	position: absolute;
+	display: none;
+	border: 1px solid #000;
+}
+
+.signup_head {
+	width: 360px;
+	height: 50px;
+	margin-left: 20px;
+	border-bottom: 1px solid #999;
+}
+
+.sign_login {
+	width: 210px;
+	height: 50px;
+	float: left;
+}
+
+.close_it {
+	float: right;
+	width: 30px;
+	height: 40px;
+	margin-top: 10px;
+	background: url(../img/close1.png) no-repeat;
+}
+
+.close_it:hover {
+	background: url(../img/close2.png) no-repeat;
+	cursor: pointer;
+}
+
+.login_text {
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	text-align: center;
+	color: #666;
+	font-weight: bold;
+}
+
+.signup_input {
+	width: 320px;
+	height: 268px;
+	margin-top: 40px;
+	margin-left: 40px;
+	display: none;
+}
+
+.input_text {
+	width: 100%;
+	height: 40px;
+	margin-top: 40px;
+}
+
+.input_text input {
+	width: 276px;;
+	height: 35px;
+	color: #999;
+	border: 1px solid #CCC;
+	border-left: 0;
+}
+
+.input_register {
+	background: #cc0000;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+	color: #FFF;
+	z-index: 120;
+}
+
+.input_register:hover {
+	background: #F00;
+	cursor: pointer;
+}
+
+.login_text:hover {
+	border-bottom: 1px solid #F00;
+	cursor: pointer;
+	color: #F00;
+}
+
+.hide {
+	display: none;
+}
